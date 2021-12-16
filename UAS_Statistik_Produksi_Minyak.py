@@ -141,9 +141,7 @@ ax.set_title("Grafik {} Negara dengan Jumlah Produksi Kumulatif Terbesar".format
 ax.set_ylabel("Negara", fontsize=23)
 ax.set_xlabel("Total Produksi", fontsize = 23)
 plt.tight_layout()
-
-with st.container ():
-    st.pyplot(fig)
+st.pyplot(fig)
 #>>>>>>>>>>>> Mid Column <<<<<<<<<<<<#
 
 
@@ -158,7 +156,6 @@ for code in kode_negara:
         region = code['region']
         sub_region = code['sub-region']
 Jumlah_produksi = data_negara_produksi['Produksi'].iloc[0]
-
 col_3.markdown(f"**Negara dengan jumlah produksi terbesar pada tahun {str(Tahun)}: **")
 col_3.text(f"Nama Negara    : {Nama_lengkap_negara}")
 col_3.text(f"Kode Negara    : {code_negara}")
@@ -174,7 +171,6 @@ for code in kode_negara:
         reg = code['region']
         sub_reg = code['sub-region']
 Jumlah_prdks = data_produksi_kumulatif['Produksi'].iloc[0]
-
 col_4.text ("")
 col_4.text ("")
 col_4.text ("")
@@ -200,7 +196,6 @@ for code in kode_negara:
         cod_ngr = code['country-code']
         regi = code['region']
         sub_regi = code['sub-region']
-
 col_3.markdown(f"**Negara dengan jumlah produksi terkecil pada tahun {str(Tahun)} : **")
 col_3.text(f"Nama Negara    : {nmlngkp_negara}")
 col_3.text(f"Kode Negara    : {cod_ngr}")
@@ -222,7 +217,6 @@ for code in kode_negara:
         cod = code['country-code']
         reg_ = code['region']
         sub_re = code['sub-region']
-
 col_4.markdown(f"**Negara dengan jumlah produksi terkecil kumulatif : **")
 col_4.text(f"Nama Negara    : {nmlngkp_ngr}")
 col_4.text(f"Kode Negara    : {cod}")
