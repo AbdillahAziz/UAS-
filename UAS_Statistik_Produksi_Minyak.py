@@ -115,7 +115,7 @@ data_negara_produksi.sort_values(by = ['Produksi'],inplace=True,ascending=False)
 
 fig, ax = plt.subplots(figsize = (15,8))
 ax.barh(data_negara_produksi['Negara'].head(B_terbesar), data_negara_produksi['Produksi'].head(B_terbesar), color=colors)
-ax.set_title("Grafik {} Negara dengan Jumlah Produksi Terbesar ({})".format(B_terbesar,str(Tahun)), fontsize=25)
+ax.set_title("Grafik {} Negara dengan Jumlah Produksi Terbesar ({})".format(B_terbesar,Tahun), fontsize=25)
 ax.set_ylabel("Negara", fontsize=20)
 ax.set_xlabel("Total Produksi", fontsize = 20)
 plt.tight_layout()
@@ -130,7 +130,6 @@ for kode in kode_negara_fix:
 
 data_produksi_kumulatif = pd.DataFrame({'Negara':Nama_negara,'Produksi' : Total_produksi })
 data_produksi_kumulatif.sort_values(by = ['Produksi'],inplace=True,ascending=False)
-data_produksi_kumulatif
 
 fig, ax = plt.subplots(figsize = (15,8))
 ax.barh(data_produksi_kumulatif['Negara'].head(B_terbesar), data_produksi_kumulatif['Produksi'].head(B_terbesar), color=colors)
