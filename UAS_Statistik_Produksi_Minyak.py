@@ -147,8 +147,7 @@ with st.container ():
 
 
 #>>>>>>>>>>>> Mid Column 4 <<<<<<<<<<<<#
-with st.container():
-    st.subheader("Summary")
+st.subheader("Summary")
 
 #Data negara jumlah produksi terbesar pada tahun T
 Nama_lengkap_negara = str(data_negara_produksi['Negara'].iloc[0])
@@ -158,12 +157,14 @@ for code in kode_negara:
         region = code['region']
         sub_region = code['sub-region']
 Jumlah_produksi = data_negara_produksi['Produksi'].iloc[0]
-col_3.markdown(f"**Negara dengan jumlah produksi terbesar pada tahun {str(Tahun)}: **")
-col_3.text(f"Nama Negara    : {Nama_lengkap_negara}")
-col_3.text(f"Kode Negara    : {code_negara}")
-col_3.text(f"Region         : {region}")
-col_3.text(f"Sub Region     : {sub_region}")
-col_3.text(f"Total Produksi : {Jumlah_produksi}")
+
+with col_3 :
+    st.markdown(f"**Negara dengan jumlah produksi terbesar pada tahun {str(Tahun)}: **")
+    st.text(f"Nama Negara    : {Nama_lengkap_negara}")
+    st.text(f"Kode Negara    : {code_negara}")
+    st.text(f"Region         : {region}")
+    st.text(f"Sub Region     : {sub_region}")
+    st.text(f"Total Produksi : {Jumlah_produksi}")
 
 #Data negara jumlah produksi terbesar kumulatif
 nm_negara = str(data_produksi_kumulatif['Negara'].iloc[0])
@@ -178,12 +179,13 @@ Jumlah_prdks = data_produksi_kumulatif['Produksi'].iloc[0]
 #col_4.text ("")
 #col_4.text ("")
 #col_4.text ("")
-col_4.markdown(f"**Negara dengan jumlah produksi kumulatif terbesar : **")
-col_4.text(f"Nama Negara    : {nm_negara}")
-col_4.text(f"Kode Negara    : {code_ngr}")
-col_4.text(f"Region         : {reg}")
-col_4.text(f"Sub Region     : {sub_reg}")
-col_4.text(f"Total Produksi : {Jumlah_prdks}")
+with col_4 :
+    st.markdown(f"**Negara dengan jumlah produksi kumulatif terbesar : **")
+    st.text(f"Nama Negara    : {nm_negara}")
+    st.text(f"Kode Negara    : {code_ngr}")
+    st.text(f"Region         : {reg}")
+    st.text(f"Sub Region     : {sub_reg}")
+    st.text(f"Total Produksi : {Jumlah_prdks}")
 
 #Data negara jumlah produksi terkecil pada tahun T
 prdksi_trkcl = None
@@ -199,12 +201,14 @@ for code in kode_negara:
         cod_ngr = code['country-code']
         regi = code['region']
         sub_regi = code['sub-region']
-col_3.markdown(f"**Negara dengan jumlah produksi terkecil pada tahun {str(Tahun)} : **")
-col_3.text(f"Nama Negara    : {nmlngkp_negara}")
-col_3.text(f"Kode Negara    : {cod_ngr}")
-col_3.text(f"Region         : {regi}")
-col_3.text(f"Sub Region     : {sub_regi}")
-col_3.text(f"Total Produksi : {prdksi_trkcl}")
+
+with col_3 :
+    st.markdown(f"**Negara dengan jumlah produksi terkecil pada tahun {str(Tahun)} : **")
+    st.text(f"Nama Negara    : {nmlngkp_negara}")
+    st.text(f"Kode Negara    : {cod_ngr}")
+    st.text(f"Region         : {regi}")
+    st.text(f"Sub Region     : {sub_regi}")
+    st.text(f"Total Produksi : {prdksi_trkcl}")
 
 #Data negara jumlah produksi terkecil kumulatif
 prediksi = None
@@ -220,12 +224,13 @@ for code in kode_negara:
         cod = code['country-code']
         reg_ = code['region']
         sub_re = code['sub-region']
-col_4.markdown(f"**Negara dengan jumlah produksi terkecil kumulatif : **")
-col_4.text(f"Nama Negara    : {nmlngkp_ngr}")
-col_4.text(f"Kode Negara    : {cod}")
-col_4.text(f"Region         : {reg_}")
-col_4.text(f"Sub Region     : {sub_re}")
-col_4.text(f"Total Produksi : {prediksi}")
+with col_4 :  
+    st.markdown(f"**Negara dengan jumlah produksi terkecil kumulatif : **")
+    st.text(f"Nama Negara    : {nmlngkp_ngr}")
+    st.text(f"Kode Negara    : {cod}")
+    st.text(f"Region         : {reg_}")
+    st.text(f"Sub Region     : {sub_re}")
+    st.text(f"Total Produksi : {prediksi}")
 
 #Data negara jumlah produksi sama dengan nol pada tahun T
 lst_nm_ngr = []
