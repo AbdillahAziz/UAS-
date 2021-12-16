@@ -24,7 +24,6 @@ st.sidebar.image(gambar)
 
 st.sidebar.title("Pengaturan")
 st.sidebar.subheader("Pengaturan konfigurasi tampilan")
-mid_col = st.columns(1)
 
 #Input Data
 with open("kode_negara_lengkap.json") as f:
@@ -82,14 +81,14 @@ for i in range (len(df)) :
 cmap_name = 'tab20'
 cmap = cm.get_cmap(cmap_name)
 colors = cmap.colors[:len(list_tahun)]
-Tahun = np.arange(len(list_tahun))
+Tahun_1 = np.arange(len(list_tahun))
 fig, ax = plt.subplots(figsize = (15,7))
-ax.bar(Tahun, list_produksi, color=colors,)
+ax.bar(Tahun_1, list_produksi, color=colors,)
 ax.set_title("Total Produksi per Tahun Negara {}".format(Negara), fontsize=25)
 ax.set_ylabel("TotalProduksi", fontsize=20)
 ax.set_xlabel("Tahun", fontsize = 20)
 ax.set_xticklabels(list_tahun)
-plt.xticks(Tahun, list_tahun, rotation= 45)
+plt.xticks(Tahun_1, list_tahun, rotation= 45)
 plt.tight_layout()
 
 st.pyplot(fig)
@@ -114,7 +113,7 @@ for i in range(len(list_kode_negara)):
 
 data_negara_produksi = pd.DataFrame({'Negara':list_negara,'Produksi' : list_produksi_2 })
 data_negara_produksi.sort_values(by = ['Produksi'],inplace=True,ascending=False)
-data_negara_produksi
+
 fig, ax = plt.subplots(figsize = (15,8))
 ax.barh(data_negara_produksi['Negara'].head(B_terbesar), data_negara_produksi['Produksi'].head(B_terbesar), color=colors)
 ax.set_title("Grafik {} Negara dengan Jumlah Produksi Terbesar ({})".format(B_terbesar,Tahun), fontsize=25)
