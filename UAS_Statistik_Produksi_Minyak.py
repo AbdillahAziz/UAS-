@@ -16,7 +16,8 @@ from PIL import Image
 #>>>>>>>>>>>> title <<<<<<<<<<<<#
 st.set_page_config(layout="wide")  # this needs to be the first Streamlit command called
 st.title("Statistik Produksi Minyak Berbagai Negara")
-st.image('kilang minyak.png')
+image = Image.open('kilang minyak.png')
+st.image(image)
 #>>>>>>>>>>>> title <<<<<<<<<<<<#
 
 #>>>>>>>>>>>> sidebar <<<<<<<<<<<<#
