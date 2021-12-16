@@ -147,8 +147,7 @@ with st.container ():
 col_3,col_4 = st.columns(2)
 
 #>>>>>>>>>>>> Mid Column 4 <<<<<<<<<<<<#
-st.markdown ("##### Summary")
-#st.subheader("Summary")
+col_3.subheader("Summary")
 
 #Data negara jumlah produksi terbesar pada tahun T
 Nama_lengkap_negara = str(data_negara_produksi['Negara'].iloc[0])
