@@ -27,9 +27,9 @@ st.sidebar.subheader("Pengaturan konfigurasi tampilan")
 mid_col = st.columns(1)
 
 #Input Data
-with open("F:/ITB/Semester 3/Prokom/UAS/kode_negara_lengkap.json") as f:
+with open("kode_negara_lengkap.json") as f:
     kode_negara = js.load(f)
-df = pd.read_csv("F:/ITB/Semester 3/Prokom/UAS/produksi_minyak_mentah.csv", decimal='.')
+df = pd.read_csv("produksi_minyak_mentah.csv", decimal='.')
 
 #Mensortir kode negara yang unik
 kode_unik = list(df['kode_negara'].unique())
