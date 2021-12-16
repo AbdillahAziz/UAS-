@@ -24,11 +24,12 @@ st.sidebar.image(gambar)
 
 st.sidebar.title("Pengaturan")
 st.sidebar.subheader("Pengaturan konfigurasi tampilan")
+mid_col = st.columns(1)
 
 #Input Data
-with open("kode_negara_lengkap.json") as f:
+with open("F:/ITB/Semester 3/Prokom/UAS/kode_negara_lengkap.json") as f:
     kode_negara = js.load(f)
-df = pd.read_csv("produksi_minyak_mentah.csv", decimal='.')
+df = pd.read_csv("F:/ITB/Semester 3/Prokom/UAS/produksi_minyak_mentah.csv", decimal='.')
 
 #Mensortir kode negara yang unik
 kode_unik = list(df['kode_negara'].unique())
@@ -113,13 +114,14 @@ for i in range(len(list_kode_negara)):
 
 data_negara_produksi = pd.DataFrame({'Negara':list_negara,'Produksi' : list_produksi_2 })
 data_negara_produksi.sort_values(by = ['Produksi'],inplace=True,ascending=False)
-
+data_negara_produksi
 fig, ax = plt.subplots(figsize = (15,8))
 ax.barh(data_negara_produksi['Negara'].head(B_terbesar), data_negara_produksi['Produksi'].head(B_terbesar), color=colors)
 ax.set_title("Grafik {} Negara dengan Jumlah Produksi Terbesar ({})".format(B_terbesar,Tahun), fontsize=25)
 ax.set_ylabel("Negara", fontsize=20)
 ax.set_xlabel("Total Produksi", fontsize = 20)
 plt.tight_layout()
+
 st.pyplot(fig)
 #>>>>>>>>>>>> Mid Column 2 <<<<<<<<<<<<#
 
