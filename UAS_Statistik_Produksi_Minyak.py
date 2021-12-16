@@ -61,7 +61,8 @@ df['tahun'] = df['tahun'].astype(str)
 #Input User 
 Negara = st.sidebar.selectbox("Pilih Negara", Nama_negara)
 B_terbesar = st.sidebar.number_input("Input jumlah N Negara Terbesar (max = 137)", min_value=1, max_value=137, value=10)
-Tahun = st.sidebar.selectbox("Pilih Tahun", tahun_unik)
+Thn = st.sidebar.selectbox("Pilih Tahun", tahun_unik)
+Tahun = str(Thn)
 #>>>>>>>>>>>> sidebar <<<<<<<<<<<<#
 
 #>>>>>>>>>>>> Left Column upper <<<<<<<<<<<<#
