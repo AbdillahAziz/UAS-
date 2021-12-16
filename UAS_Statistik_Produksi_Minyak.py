@@ -257,7 +257,7 @@ for i in range (len(list_nm_ngr)):
 
 jmlproduksikum = pd.DataFrame ({"Negara": list_nm_ngr , "Kode Negara" : list_code_ngr, "Region" : list_region , "Sub Region" : list_sub_region})
 st.text ("")
-st.markdown(f"**Negara dengan jumlah produksi kumulatif = 0 :**")
+st.markdown(f"**Negara dengan produksi kumulatif berjumlah 0 :**")
 st.text ("")
 st.dataframe (jmlproduksikum)
 #>>>>>>>>>>>> Mid Column 4 <<<<<<<<<<<<#
