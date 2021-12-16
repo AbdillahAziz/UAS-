@@ -54,7 +54,6 @@ for i in range (len(df)) :
 
 for i in list_organisasi :
     df = df[df.kode_negara != i]
-df['tahun'] = df['tahun'].astype(str)
 
 #Input User 
 Negara = st.sidebar.selectbox("Pilih Negara", Nama_negara)
@@ -100,7 +99,7 @@ list_kode_negara = []
 list_produksi_2 = []
 
 for i in range (len(df)) :
-    if df['tahun'].iloc[i] == str(Tahun) :
+    if df['tahun'].iloc[i] == Tahun :
         list_kode_negara.append(df['kode_negara'].iloc[i])
         list_produksi_2.append(df['produksi'].iloc[i])
 
