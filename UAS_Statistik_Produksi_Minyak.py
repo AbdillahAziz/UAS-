@@ -172,6 +172,10 @@ for code in kode_negara:
         reg = code['region']
         sub_reg = code['sub-region']
 Jumlah_prdks = data_produksi_kumulatif['Produksi'].iloc[0]
+
+col_4.text ("")
+col_4.text ("")
+col_4.text ("")
 col_4.markdown(f"**Negara dengan jumlah produksi kumulatif terbesar : **")
 col_4.text(f"Nama Negara    : {nm_negara}")
 col_4.text(f"Kode Negara    : {code_ngr}")
