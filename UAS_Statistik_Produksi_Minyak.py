@@ -54,11 +54,12 @@ for i in range (len(df)) :
 
 for i in list_organisasi :
     df = df[df.kode_negara != i]
+df['tahun'] = df['tahun'].astype(str)
 
 #Input User 
 Negara = st.sidebar.selectbox("Pilih Negara", Nama_negara)
 B_terbesar = st.sidebar.number_input("Input jumlah N Negara Terbesar(max = 137)", min_value=1, max_value=137, value=10)
-Tahun = st.sidebar.selectbox("Pilih Tahun", tahun_unik)
+str(Tahun) = st.sidebar.selectbox("Pilih Tahun", tahun_unik)
 #>>>>>>>>>>>> sidebar <<<<<<<<<<<<#
 
 #>>>>>>>>>>>> Mid Column 1 <<<<<<<<<<<<#
