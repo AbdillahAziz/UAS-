@@ -147,85 +147,85 @@ with st.container ():
 col_3,col_4 = st.columns(2)
 
 #>>>>>>>>>>>> Mid Column 4 <<<<<<<<<<<<#
-col_3.subheader("Summary")
+st.subheader("Summary")
 
-#Data negara jumlah produksi terbesar pada tahun T
-Nama_lengkap_negara = str(data_negara_produksi['Negara'].iloc[0])
-for code in kode_negara:
-    if Nama_lengkap_negara == code["name"] :
-        code_negara = code['country-code']
-        region = code['region']
-        sub_region = code['sub-region']
-Jumlah_produksi = data_negara_produksi['Produksi'].iloc[0]
-col_3.markdown(f"**Negara dengan jumlah produksi terbesar pada tahun {str(Tahun)}: **")
-col_3.text(f"Nama Negara    : {Nama_lengkap_negara}")
-col_3.text(f"Kode Negara    : {code_negara}")
-col_3.text(f"Region         : {region}")
-col_3.text(f"Sub Region     : {sub_region}")
-col_3.text(f"Total Produksi : {Jumlah_produksi}")
+with st.container ():
+    #Data negara jumlah produksi terbesar pada tahun T
+    Nama_lengkap_negara = str(data_negara_produksi['Negara'].iloc[0])
+    for code in kode_negara:
+        if Nama_lengkap_negara == code["name"] :
+            code_negara = code['country-code']
+            region = code['region']
+            sub_region = code['sub-region']
+    Jumlah_produksi = data_negara_produksi['Produksi'].iloc[0]
+    col_3.markdown(f"**Negara dengan jumlah produksi terbesar pada tahun {str(Tahun)}: **")
+    col_3.text(f"Nama Negara    : {Nama_lengkap_negara}")
+    col_3.text(f"Kode Negara    : {code_negara}")
+    col_3.text(f"Region         : {region}")
+    col_3.text(f"Sub Region     : {sub_region}")
+    col_3.text(f"Total Produksi : {Jumlah_produksi}")
 
-#Data negara jumlah produksi terbesar kumulatif
-nm_negara = str(data_produksi_kumulatif['Negara'].iloc[0])
-for code in kode_negara:
-    if nm_negara == code["name"] :
-        code_ngr = code['country-code']
-        reg = code['region']
-        sub_reg = code['sub-region']
-Jumlah_prdks = data_produksi_kumulatif['Produksi'].iloc[0]
+    #Data negara jumlah produksi terbesar kumulatif
+    nm_negara = str(data_produksi_kumulatif['Negara'].iloc[0])
+    for code in kode_negara:
+        if nm_negara == code["name"] :
+            code_ngr = code['country-code']
+            reg = code['region']
+            sub_reg = code['sub-region']
+    Jumlah_prdks = data_produksi_kumulatif['Produksi'].iloc[0]
 
-col_4.text ("")
-col_4.text ("")
-col_4.text ("")
-col_4.text ("")
-col_4.text ("")
-col_4.markdown(f"**Negara dengan jumlah produksi kumulatif terbesar : **")
-col_4.text(f"Nama Negara    : {nm_negara}")
-col_4.text(f"Kode Negara    : {code_ngr}")
-col_4.text(f"Region         : {reg}")
-col_4.text(f"Sub Region     : {sub_reg}")
-col_4.text(f"Total Produksi : {Jumlah_prdks}")
+    #col_4.text ("")
+    #col_4.text ("")
+    #col_4.text ("")
+    #col_4.text ("")
+    col_4.markdown(f"**Negara dengan jumlah produksi kumulatif terbesar : **")
+    col_4.text(f"Nama Negara    : {nm_negara}")
+    col_4.text(f"Kode Negara    : {code_ngr}")
+    col_4.text(f"Region         : {reg}")
+    col_4.text(f"Sub Region     : {sub_reg}")
+    col_4.text(f"Total Produksi : {Jumlah_prdks}")
 
-#Data negara jumlah produksi terkecil pada tahun T
-prdksi_trkcl = None
-for i in range (len(data_negara_produksi)) :
-    if prdksi_trkcl == None :
-        prdksi_trkcl = data_negara_produksi['Produksi'].iloc[i]
-    elif data_negara_produksi['Produksi'].iloc[i] != 0 :
-        if data_negara_produksi['Produksi'].iloc[i] < prdksi_trkcl :
+    #Data negara jumlah produksi terkecil pada tahun T
+    prdksi_trkcl = None
+    for i in range (len(data_negara_produksi)) :
+        if prdksi_trkcl == None :
             prdksi_trkcl = data_negara_produksi['Produksi'].iloc[i]
-            nmlngkp_negara = data_negara_produksi['Negara'].iloc[i]
-for code in kode_negara:
-    if nmlngkp_negara == code["name"] :
-        cod_ngr = code['country-code']
-        regi = code['region']
-        sub_regi = code['sub-region']
-col_3.markdown(f"**Negara dengan jumlah produksi terkecil pada tahun {str(Tahun)} : **")
-col_3.text(f"Nama Negara    : {nmlngkp_negara}")
-col_3.text(f"Kode Negara    : {cod_ngr}")
-col_3.text(f"Region         : {regi}")
-col_3.text(f"Sub Region     : {sub_regi}")
-col_3.text(f"Total Produksi : {prdksi_trkcl}")
+        elif data_negara_produksi['Produksi'].iloc[i] != 0 :
+            if data_negara_produksi['Produksi'].iloc[i] < prdksi_trkcl :
+                prdksi_trkcl = data_negara_produksi['Produksi'].iloc[i]
+                nmlngkp_negara = data_negara_produksi['Negara'].iloc[i]
+    for code in kode_negara:
+        if nmlngkp_negara == code["name"] :
+            cod_ngr = code['country-code']
+            regi = code['region']
+            sub_regi = code['sub-region']
+    col_3.markdown(f"**Negara dengan jumlah produksi terkecil pada tahun {str(Tahun)} : **")
+    col_3.text(f"Nama Negara    : {nmlngkp_negara}")
+    col_3.text(f"Kode Negara    : {cod_ngr}")
+    col_3.text(f"Region         : {regi}")
+    col_3.text(f"Sub Region     : {sub_regi}")
+    col_3.text(f"Total Produksi : {prdksi_trkcl}")
 
-#Data negara jumlah produksi terkecil kumulatif
-prediksi = None
-for i in range (len(data_produksi_kumulatif)) :
-    if prediksi == None :
-        prediksi = data_produksi_kumulatif['Produksi'].iloc[i]
-    elif data_produksi_kumulatif['Produksi'].iloc[i] != 0 :
-        if data_produksi_kumulatif['Produksi'].iloc[i] < prediksi :
+    #Data negara jumlah produksi terkecil kumulatif
+    prediksi = None
+    for i in range (len(data_produksi_kumulatif)) :
+        if prediksi == None :
             prediksi = data_produksi_kumulatif['Produksi'].iloc[i]
-            nmlngkp_ngr = data_produksi_kumulatif['Negara'].iloc[i]
-for code in kode_negara:
-    if nmlngkp_ngr == code["name"] :
-        cod = code['country-code']
-        reg_ = code['region']
-        sub_re = code['sub-region']
-col_4.markdown(f"**Negara dengan jumlah produksi terkecil kumulatif : **")
-col_4.text(f"Nama Negara    : {nmlngkp_ngr}")
-col_4.text(f"Kode Negara    : {cod}")
-col_4.text(f"Region         : {reg_}")
-col_4.text(f"Sub Region     : {sub_re}")
-col_4.text(f"Total Produksi : {prediksi}")
+        elif data_produksi_kumulatif['Produksi'].iloc[i] != 0 :
+            if data_produksi_kumulatif['Produksi'].iloc[i] < prediksi :
+                prediksi = data_produksi_kumulatif['Produksi'].iloc[i]
+                nmlngkp_ngr = data_produksi_kumulatif['Negara'].iloc[i]
+    for code in kode_negara:
+        if nmlngkp_ngr == code["name"] :
+            cod = code['country-code']
+            reg_ = code['region']
+            sub_re = code['sub-region']
+    col_4.markdown(f"**Negara dengan jumlah produksi terkecil kumulatif : **")
+    col_4.text(f"Nama Negara    : {nmlngkp_ngr}")
+    col_4.text(f"Kode Negara    : {cod}")
+    col_4.text(f"Region         : {reg_}")
+    col_4.text(f"Sub Region     : {sub_re}")
+    col_4.text(f"Total Produksi : {prediksi}")
 
 #Data negara jumlah produksi sama dengan nol pada tahun T
 lst_nm_ngr = []
