@@ -83,7 +83,7 @@ cmap_name = 'tab20'
 cmap = cm.get_cmap(cmap_name)
 colors = cmap.colors[:len(list_tahun)]
 Tahun_1 = np.arange(len(list_tahun))
-fig, ax = plt.subplots(figsize = (15,7))
+fig, ax = plt.subplots(figsize = (15,8))
 ax.bar(Tahun_1, list_produksi, color=colors,)
 ax.set_title("Total Produksi per Tahun Negara {}".format(Negara), fontsize=25)
 ax.set_ylabel("TotalProduksi", fontsize=20)
