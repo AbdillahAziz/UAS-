@@ -159,7 +159,7 @@ for code in kode_negara:
 Jumlah_produksi = data_negara_produksi['Produksi'].iloc[0]
 col_3.text ("")
 col_3.markdown(f"**Negara dengan jumlah produksi terbesar pada tahun {str(Tahun)}: **")
-col_4.text ("")
+col_3.text ("")
 col_3.text(f"Nama Negara    : {Nama_lengkap_negara}")
 col_3.text(f"Kode Negara    : {code_negara}")
 col_3.text(f"Region         : {region}")
@@ -206,6 +206,7 @@ col_3.text(f"Kode Negara    : {cod_ngr}")
 col_3.text(f"Region         : {regi}")
 col_3.text(f"Sub Region     : {sub_regi}")
 col_3.text(f"Total Produksi : {prdksi_trkcl}")
+col_3.text ("")
 
 #Data negara jumlah produksi terkecil kumulatif
 prediksi = None
@@ -230,6 +231,7 @@ col_4.text(f"Kode Negara    : {cod}")
 col_4.text(f"Region         : {reg_}")
 col_4.text(f"Sub Region     : {sub_re}")
 col_4.text(f"Total Produksi : {prediksi}")
+col_4.text ("")
 
 #Data negara jumlah produksi sama dengan nol pada tahun T
 lst_nm_ngr = []
