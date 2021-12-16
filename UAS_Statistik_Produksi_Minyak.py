@@ -234,7 +234,8 @@ for i in range (len(lst_nm_ngr)):
             lst_region.append(code['region'])
             lst_sub_region.append(code['sub-region'])
 
-jmlproduksi0 = pd.DataFrame ({"Negara": lst_code_ngr , "Kode Negara" : lst_code_ngr, "Region" : lst_region , "Sub Region" : lst_sub_region})
+jmlproduksi0 = pd.DataFrame ({"Negara": lst_nm_ngr , "Kode Negara" : lst_code_ngr, "Region" : lst_region , "Sub Region" : lst_sub_region})
+st.text ("")
 st.markdown(f"**Negara dengan jumlah produksi 0 pada tahun {str(Tahun)} : **")
 st.text ("")
 st.dataframe (jmlproduksi0)
@@ -254,7 +255,8 @@ for i in range (len(list_nm_ngr)):
             list_region.append(code['region'])
             list_sub_region.append(code['sub-region'])
 
-jmlproduksikum = pd.DataFrame ({"Negara": list_code_ngr , "Kode Negara" : list_code_ngr, "Region" : list_region , "Sub Region" : list_sub_region})
+jmlproduksikum = pd.DataFrame ({"Negara": list_nm_ngr , "Kode Negara" : list_code_ngr, "Region" : list_region , "Sub Region" : list_sub_region})
+st.text ("")
 st.markdown(f"**Negara dengan jumlah produksi kumulatif = 0 :**")
 st.text ("")
 st.dataframe (jmlproduksikum)
