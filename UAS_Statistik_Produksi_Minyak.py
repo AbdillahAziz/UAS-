@@ -147,6 +147,7 @@ with st.container ():
 
 
 #>>>>>>>>>>>> Mid Column 4 <<<<<<<<<<<<#
+with st.container():
     st.subheader("Summary")
 
 #Data negara jumlah produksi terbesar pada tahun T
