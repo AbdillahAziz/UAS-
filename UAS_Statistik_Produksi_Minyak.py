@@ -21,6 +21,7 @@ st.title("Statistik Total Produksi Minyak Berbagai Negara")
 #>>>>>>>>>>>> sidebar <<<<<<<<<<<<#
 gambar = Image.open('Logo_oil.jpg')
 st.sidebar.image(gambar)
+col_1 , col_2 = st.columns(2)
 
 st.sidebar.title("Pengaturan")
 st.sidebar.subheader("Pengaturan konfigurasi tampilan")
@@ -64,7 +65,7 @@ Tahun = str(Thn)
 #>>>>>>>>>>>> sidebar <<<<<<<<<<<<#
 
 #>>>>>>>>>>>> Mid Column 1 <<<<<<<<<<<<#
-st.subheader("Grafik Produksi Minyak Mentah")
+col_1.subheader("Grafik Produksi Minyak Mentah")
 #Mengkonversi nama lengkap menjadi kode negara
 for code in kode_negara:
     if Negara == code["name"] :
@@ -91,11 +92,11 @@ ax.set_xticklabels(list_tahun)
 plt.xticks(Tahun_1, list_tahun, rotation= 45)
 plt.tight_layout()
 
-st.pyplot(fig)
+col_1.pyplot(fig)
 #>>>>>>>>>>>> Mid Column 1 <<<<<<<<<<<<#
 
 #>>>>>>>>>>>> Mid Column 2 <<<<<<<<<<<<#
-st.subheader("Grafik Produksi Terbesar")
+col_2.subheader("Grafik Produksi Terbesar")
 
 list_kode_negara = []
 list_produksi_2 = []
@@ -121,7 +122,7 @@ ax.set_ylabel("Negara", fontsize=20)
 ax.set_xlabel("Total Produksi", fontsize = 20)
 plt.tight_layout()
 
-st.pyplot(fig)
+col_2.pyplot(fig)
 #>>>>>>>>>>>> Mid Column 2 <<<<<<<<<<<<#
 
 #>>>>>>>>>>>> Mid Column 3 <<<<<<<<<<<<#
