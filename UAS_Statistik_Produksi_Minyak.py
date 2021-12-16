@@ -141,7 +141,8 @@ ax.set_title("Grafik {} Negara dengan Jumlah Produksi Kumulatif Terbesar".format
 ax.set_ylabel("Negara", fontsize=23)
 ax.set_xlabel("Total Produksi", fontsize = 23)
 plt.tight_layout()
-st.pyplot(fig)
+with st.container ():
+    st.pyplot(fig)
 #>>>>>>>>>>>> Mid Column <<<<<<<<<<<<#
 
 #>>>>>>>>>>>> Mid Column 4 <<<<<<<<<<<<#
