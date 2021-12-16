@@ -35,7 +35,7 @@ df = pd.read_csv("produksi_minyak_mentah.csv", decimal='.')
 kode_unik = list(df['kode_negara'].unique())
 
 #Mensortir tahun unik
-tahun_unik = list(str(df['tahun'].unique()))
+tahun_unik = list(df['tahun'].unique())
 
 #Mengambil nama lengkap negara dari file json
 Nama_negara = []
